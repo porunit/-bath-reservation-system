@@ -6,8 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import poruit.bathbooking.entity.Bathhouse;
 import poruit.bathbooking.entity.Location;
+import poruit.bathbooking.entity.User;
 import poruit.bathbooking.repository.BathhouseRepository;
 import poruit.bathbooking.repository.LocationRepository;
+import poruit.bathbooking.repository.UserRepository;
 
 import java.math.BigDecimal;
 
@@ -22,9 +24,17 @@ public class BathbookingApplication {
      * Инициализируем тестовые данные для локаций и бань.
      */
     @Bean
-    CommandLineRunner initData(LocationRepository locationRepo, BathhouseRepository bathhouseRepo) {
+    CommandLineRunner initData(LocationRepository locationRepo, BathhouseRepository bathhouseRepo, UserRepository userRepo) {
         return args -> {
+
+            User user = new User(
+                    null,
+                    "hui",
+                    "porunit",
+                    "porunit"
+            );
             // Локация 1
+            userRepo.save(user);
             Location loc1 = Location.builder()
                     .name("Центральный район")
                     .address("ул. Ленина, д. 10")

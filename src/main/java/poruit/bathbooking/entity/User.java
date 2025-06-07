@@ -20,18 +20,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "full_name", nullable = false)
+    @Column(name = "full_name")
     private String fullName;     // Полное имя
-
-    @Column(nullable = false, unique = true)
-    private String email;        // Email (уникальный)
 
     private String phone;        // Телефон (опционально)
 
     @Column(name = "tg_username", nullable = false, unique = true)
     private String tgUsername;   // Telegram-username (уникальный)
-
-    @Column(name = "created_at", nullable = false, updatable = false)
-    @Builder.Default
-    private LocalDateTime createdAt = LocalDateTime.now();
 }

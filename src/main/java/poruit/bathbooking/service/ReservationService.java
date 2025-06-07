@@ -40,9 +40,9 @@ public class ReservationService {
      */
     public Reservation createReservation(String tgUsername, Long bathhouseId,
                                          LocalDateTime start, LocalDateTime end) {
-        User user = userRepo.findByTgUsername(tgUsername)
-                .orElseThrow(() -> new IllegalArgumentException(
-                        "Пользователь с tgUsername=" + tgUsername + " не найден"));
+//        User user = userRepo.findByTgUsername(tgUsername)
+//                .orElseThrow(() -> new IllegalArgumentException(
+//                        "Пользователь с tgUsername=" + tgUsername + " не найден"));
 
         Bathhouse bathhouse = bathhouseRepo.findById(bathhouseId)
                 .orElseThrow(() -> new IllegalArgumentException(
@@ -56,7 +56,7 @@ public class ReservationService {
         }
 
         Reservation reservation = Reservation.builder()
-                .user(user)
+//                .user(user)
                 .bathhouse(bathhouse)
                 .startDateTime(start)
                 .endDateTime(end)

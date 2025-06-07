@@ -44,11 +44,11 @@ public class ReservationController {
         }
 
         // Фильтруем по tgUsername, если задан
-        if (tgUsername != null && !tgUsername.isBlank()) {
-            all = all.stream()
-                    .filter(r -> r.getUser().getTgUsername().equals(tgUsername))
-                    .collect(Collectors.toList());
-        }
+//        if (tgUsername != null && !tgUsername.isBlank()) {
+//            all = all.stream()
+//                    .filter(r -> r.getUser().getTgUsername().equals(tgUsername))
+//                    .collect(Collectors.toList());
+//        }
 
         return ResponseEntity.ok(all);
     }

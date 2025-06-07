@@ -26,9 +26,9 @@ public class Reservation {
     private Bathhouse bathhouse;
 
     // Ссылка на пользователя
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id", nullable = false)
+//    private User user;
 
     @Column(name = "start_datetime", nullable = false)
     private LocalDateTime startDateTime;  // Начало бронирования
